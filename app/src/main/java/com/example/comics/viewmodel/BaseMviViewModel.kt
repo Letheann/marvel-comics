@@ -1,6 +1,7 @@
 package com.example.comics.viewmodel
 
 import androidx.annotation.VisibleForTesting
+import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -13,7 +14,7 @@ abstract class BaseMviViewModel<
         Intent : BaseMviViewModel.BaseViewIntent,
         State : BaseMviViewModel.BaseViewState,
         Effect : BaseMviViewModel.BaseViewEffect,
-        > : ViewModel() {
+        > : ViewModel(), DefaultLifecycleObserver {
 
     protected abstract fun initialState(): State
     abstract fun intent(intent: Intent)

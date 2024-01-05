@@ -48,6 +48,8 @@ class MainActivityViewModel(private val useCase: CharUseCase) :
 sealed class ViewIntent : BaseMviViewModel.BaseViewIntent {
     object UpdateUiChars : ViewIntent()
     object OnClickCard : ViewIntent()
+
+    object Update
 }
 
 data class ViewState(val items: ViewResource<List<ItemVO>>? = ViewResource.Loading()) :

@@ -16,7 +16,8 @@ class CharUseCaseImpl(private val repository: CharRepository) : CharUseCase {
                 ItemVO(
                     image = "${resultModel.thumbnail.path}.${resultModel.thumbnail.extension}",
                     title = resultModel.title,
-                    subtitle = resultModel.description ?: "Sem descricao"
+                    subtitle = resultModel.description ?: "Sem descricao",
+                    checked = false
                 )
             }
         }
